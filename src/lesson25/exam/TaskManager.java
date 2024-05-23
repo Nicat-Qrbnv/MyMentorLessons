@@ -1,7 +1,6 @@
 package lesson25.exam;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class TaskManager {
@@ -25,7 +24,7 @@ public class TaskManager {
 
     @Override
     public String toString() {
-        Collections.sort(tasks, Collections.reverseOrder());
+        tasks.sort((t1, t2) -> t2.getPriority().compareTo(t1.getPriority()));
         StringBuilder list = new StringBuilder("The tasks: \n");
         tasks.forEach(t -> list.append(t.toString().indent(4)));
         return list.toString();

@@ -21,6 +21,10 @@ public class Task implements Comparable<Task> {
         return text;
     }
 
+    public PriorityLevel getPriority() {
+        return priority;
+    }
+
     @Override
     public int compareTo(Task t) {
         return (this.priority.ordinal() - t.priority.ordinal()) * 100 + this.text.compareTo(t.text);
